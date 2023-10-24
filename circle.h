@@ -5,15 +5,24 @@
 
 class Circle : public Vector
 {
-private:
-    double radius;
-    double dt = 0.001;
 public:
-    Circle();
-    void on(QImage& canvas) override;
-    void setRadius(double value);
-    double getRadius();
-    void setDt(double value);
+
+    double radius = 1;
+    double dt = 0.001;
+
+    virtual void on(QImage& canvas) override {
+        double t = 0;
+        double X = X0;
+        double Y = Y0;
+        color = color;
+        do {
+            X0 = X + radius * cos(t);
+            Y0 = Y + radius * sin(t);
+            Vector::on(canvas);
+            t += dt;
+        } while (t <= 2 * M_PI);
+    }
 };
 
 #endif // CIRCLE_H
+

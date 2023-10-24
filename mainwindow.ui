@@ -14,10 +14,10 @@
    <string>maia-c++</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="to_do_something">
+   <widget class="QPushButton" name="WaveAnimation">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>10</x>
       <y>560</y>
       <width>80</width>
       <height>24</height>
@@ -41,6 +41,45 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Wave3DAnimation">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>560</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Onda 3D</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StopAnimation">
+    <property name="geometry">
+     <rect>
+      <x>589</x>
+      <y>560</y>
+      <width>121</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Detener Animación</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButtonTests">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>560</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pruebas</string>
     </property>
    </widget>
   </widget>
