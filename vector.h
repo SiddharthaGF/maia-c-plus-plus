@@ -5,48 +5,92 @@
 #include "qcolor.h"
 #include "qimage.h"
 
+using namespace std;
+
 class Vector
 {
 public:
 
-    const static int Sx1 = 0;
-    const static int Sx2 = 700;
-    const static int Sy1 = 0;
-    const static int Sy2 = 540;
-    constexpr const static double X1 = -8.0;
-    constexpr const static double X2 = 8.0;
-    constexpr const static double Y1 = -6.15;
-    constexpr const static double Y2 = 6.15;
-    double X0 = 0;
-    double Y0 = 0;
-    QColor color = Qt::black;
+    const static auto sx1 = 0;
+    const static auto sx2 = 600;
+    const static auto sy1 = 0;
+    const static auto sy2 = 500;
+    constexpr const static auto x1 = -10.0;
+    constexpr const static auto x2 = 10.0;
+    constexpr const static auto y1 = -8.333;
+    constexpr const static auto y2 = 8.333;
+    double x0 = 0;
+    double y0 = 0;
+    QColor color0 = Qt::black;
 
     virtual void on(QImage& canvas) {
         int sx, sy;
-        screen(X0, Y0, sx, sy);
-        if (sx >= Sx1 && sx < Sx2 && sy >= Sy1 && sy < Sy2){
-            canvas.setPixelColor(sx, sy, color);
-        }
+        screen(x0, y0, sx, sy);
+        if (sx >= sx1 and sx < sx2 and sy >= sy1 and sy < sy2)
+            canvas.setPixelColor(sx, sy, color0);
     }
 
     static void screen(double x, double y, int& sx, int& sy)
     {
-        sx = ((x - X1) / (X1 - X2) * (Sx1 - Sx2) + Sx1);
-        sy = ((y - Y2) / (Y2 - Y1) * (Sy1 - Sy2) + Sy1);
+        sx = ((x - x1) / (x1 - x2) * (sx1 - sx2) + sx1);
+        sy = ((y - y2) / (y2 - y1) * (sy1 - sy2) + sy1);
     }
 
     static void card(int xP, int yP, double& x, double& y) {
-        x = ((xP - Sx1) * ((X1 - X2) / (Sx1 - Sx2)) + X1);
-        y = ((yP - Sy2) * ((Y1 - Y2) / (Sy2 - Sy1)) + Y1);
+        x = ((xP - sx1) * ((x1 - x2) / (sx1 - sx2)) + x1);
+        y = ((yP - sy2) * ((y1 - y2) / (sy2 - sy1)) + y1);
     }
 
     static double cardX(int xP) {
-        return ((xP - Sx1) * ((X1 - X2) / (Sx1 - Sx2)) + X1);
+        return ((xP - sx1) * ((x1 - x2) / (sx1 - sx2)) + x1);
     }
 
     static double cardY(int yP) {
-        return ((yP - Sy2) * ((Y1 - Y2) / (Sy2 - Sy1)) + Y1);
+        return ((yP - sy2) * ((y1 - y2) / (sy2 - sy1)) + y1);
     }
+
 };
 
 #endif // VECTOR_H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    static void card(int xP, int yP, double& x, double& y) {
+        x = ((xP - sx1) * ((X1 - X2) / (sx1 - sx2)) + X1);
+        y = ((yP - sy2) * ((Y1 - Y2) / (sy2 - sy1)) + Y1);
+    }
+
+    static auto cardX(int xP) {
+        return ((xP - sx1) * ((X1 - X2) / (sx1 - sx2)) + X1);
+    }
+
+    static auto cardY(int yP) {
+        return ((yP - sy2) * ((Y1 - Y2) / (sy2 - sy1)) + Y1);
+    }
+*/

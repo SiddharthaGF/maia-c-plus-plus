@@ -5,18 +5,18 @@
 class Segment : public Vector
 {
 public:
-    double Xf = 0;
-    double Yf = 0;
+    double xf = 0;
+    double yf = 0;
     double dx = 0.001;
 
     void on(QImage &canvas) override {
-        double t = 0;
-        double X = X0;
-        double Y = Y0;
+        auto t = 0.0;
+        auto vec = Vector();
+        vec.color0 = color0;
         do {
-            X0 = (X * (t - 1)) + (Xf * t);
-            Y0 = (Y * (t - 1)) + (Yf * t);
-            Vector::on(canvas);
+            vec.x0 = -(x0 * (t - 1)) + (xf * t);
+            vec.y0 = -(y0 * (t - 1)) + (yf * t);
+            vec.on(canvas);
             t += dx;
         } while(t <= 1);
     }

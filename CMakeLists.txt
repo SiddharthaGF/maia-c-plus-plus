@@ -24,13 +24,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         vector.h
-        circle.h
+        circuference.h
         wave3d.h
         vector3d.h
         wave.h
         segment.h
         spiral.h
         ribbon.h
+        curve_v.h
     )
 
 # Define target properties for Android with Qt 6 as:

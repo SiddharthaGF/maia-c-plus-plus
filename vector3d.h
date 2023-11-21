@@ -8,10 +8,10 @@ class Vector3D : public Vector
 public:
 
     double Z0 = 0;
-    double alpha = .5;
+    double alpha = .8;
     double p = .55;
 
-    static void axonometry(double x, double y, double z, double& ax, double& ay, double alpha = .8, double p = .55) {
+    static void axonometry(double x, double y, double z, double& ax, double& ay, double alpha, double p) {
         ax = x + p * y * cos(alpha);
         ay = p * y * sin(alpha) + z;
     }
@@ -19,10 +19,10 @@ public:
     void on(QImage& canvas) {
         double ax, ay;
         int sx, sy;
-        axonometry(X0, Y0, Z0, ax, ay, alpha, p);
+        axonometry(x0, y0, Z0, ax, ay, alpha, p);
         screen(ax, ay, sx, sy);
-        if (sx >= Sx1 && sx < Sx2 && sy >= Sy1 && sy < Sy2){
-            canvas.setPixelColor(sx, sy, color);
+        if (sx >= sx1 && sx < sx2 && sy >= sy1 && sy < sy2){
+            canvas.setPixelColor(sx, sy, color0);
         }
     }
 
