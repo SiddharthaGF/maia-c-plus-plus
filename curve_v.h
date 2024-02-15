@@ -12,6 +12,10 @@ public:
         auto t = 0.0;
         auto vec = Vector();
         vec.color0 = color0;
+
+        double const radius1 = 1.8;
+        double const radius2 = 1.3;
+
         switch (type) {
         case 1:
             do {
@@ -44,6 +48,30 @@ public:
                 vec.on(canvas);
                 t += dt;
             } while (t <= 10 * M_PI);
+            break;
+        case 5:
+            do {
+                vec.x0 = x0 + (radius1 - radius2) * cos(t) + radius2 * cos(t * (1 - radius1 / radius2));
+                vec.y0 = y0 + (radius1 - radius2) * sin(t) + radius2 * sin(t * (1 - radius1 / radius2));
+                vec.on(canvas);
+                t += dt;
+            } while (t <= 26 * M_PI);
+            break;
+        case 6:
+            do {
+                vec.x0 = x0 + radius * (sin(t) * (pow(M_E, cos(t)) - 2 * cos(4 * t) - pow(sin(t/12), 5)));
+                vec.y0 = y0 + radius * (cos(t) * (pow(M_E, cos(t)) - 2 * cos(4 * t) - pow(sin(t/12), 5)));
+                vec.on(canvas);
+                t += dt;
+            } while (t <= 12 * M_PI);
+            break;
+        case 7:
+            do {
+                vec.x0 = x0 + (radius1 + radius2) * cos(t) + radius2 * cos(t * (1 + radius1 / radius2));
+                vec.y0 = y0 + (radius1 + radius2) * sin(t) + radius2 * sin(t * (1 + radius1 / radius2));
+                vec.on(canvas);
+                t += dt;
+            } while (t <= 26 * M_PI);
             break;
         // Aqui añadimos mas curvas
         default:

@@ -32,6 +32,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         spiral.h
         ribbon.h
         curve_v.h
+        timer.h
+        segment3d.h
+        vibrant_string.h
     )
 
 # Define target properties for Android with Qt 6 as:

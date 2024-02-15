@@ -6,22 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>790</width>
-    <height>555</height>
+    <width>880</width>
+    <height>570</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>maia-c++</string>
+   <string>Maia C++</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="screen">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>30</y>
       <width>600</width>
       <height>500</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>CrossCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -30,50 +33,11 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="BtnOnPixel">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>10</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Encender Pixel</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="BtnDrawG">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>40</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Dibujar letra G</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="BtnInterpolation">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>70</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Interpolar</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="BtnCleanScreen">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>520</y>
+      <y>540</y>
       <width>161</width>
       <height>24</height>
      </rect>
@@ -82,82 +46,509 @@
      <string>Limpiar Pantalla</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BtnSegmentsCircunferences">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>100</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Segmentos y Círculos</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="BtnCurves">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>130</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Curvas</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="BtnCurves2">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>160</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Curvas 2</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="BtnTaylor">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>190</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Taylor</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="BtnSegmentsCircunferences_5">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>220</y>
-      <width>161</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Boton Libre</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="BtnExes">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>520</y>
+      <y>540</y>
       <width>161</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
      <string>Ejes</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>30</y>
+      <width>251</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Parcial 1</string>
+     </attribute>
+     <widget class="QPushButton" name="BtnInterpolation">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Interpolar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnSegmentsCircunferences">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Segmentos y Círculos</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnOnPixel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Encender Pixel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnCurves">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Curvas</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnCurves2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Curvas 2</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_draw_g">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dibujar letra G</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Parcial 2</string>
+     </attribute>
+     <widget class="QPushButton" name="BtnCurves3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Curvas</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnTaylor">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Taylor</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnTgCurve">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Curva Interpolada</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnTn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recta Tangente</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_texture">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Textura</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="combo_textures">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+      <property name="currentText">
+       <string>Textura 1</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Textura 1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 5</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 6</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 7</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Textura 8</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="btn_off_curve">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Animar Pelota</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_reflexion">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relexion</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_level_curves">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Curvas de nivel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Parcial 3</string>
+     </attribute>
+     <widget class="QPushButton" name="btn_vector_3d">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Vector 3D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Libre">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ecuaciones 3D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_simple_wave">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Onda simple</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_simple_wave_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Interferecia</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_animation_simple_wave">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Animacion Onda Simple</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_animation_interference">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Animacion Interferencia</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_animation_simple3d">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Onda Simple 3D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_animation_interferece3d">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Interferencia 3D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_values_simple_wave">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ver Tabla De Valores Onda Simple 2D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_values_simple_wave_3d">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ver Tabla De Valores Onda Simple 3D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_vibrant_string">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cuerda Vibrante</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_pandemic_simulation">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Simulación Pandemia Runge Kutta 0.5</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_pandemic_simulation_analitic">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>400</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Simulación Pandemia Analítico</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_pandemic_simulation_rk_1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Simulación Pandemia Runge Kutta 1</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>601</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Proyecto Computación Científica - Maia C++</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>540</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pablo Guerra -6502</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_platform">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>540</y>
+      <width>161</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plaforma 3D</string>
     </property>
    </widget>
   </widget>

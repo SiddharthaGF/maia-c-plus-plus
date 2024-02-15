@@ -6,30 +6,28 @@
 class Wave3D : public Vector3D
 {
 public:
-    int rangeX = 7;
-    int rangeY = 6;
+    int rangeX = 9;
+    int rangeY = 7;
     double w = 0;
     double v = 0;
     double m = 0;
     double t = 0;
     double dx = 0.1;
     double dy = 0.1;
+    double skip = false;
 
     void interference(QImage& canvas) {
+        if (skip) return;
         x0 = -rangeX;
         auto vt = v * t;
-        while(x0 <= rangeX) {
+        while(x0 < rangeX) {
             y0 = -rangeY;
-            while(y0 <= rangeY) {
-                auto Y1 = (y0 - (0)) * (y0 - (0));
-                auto Y2 = (y0 - (0)) * (y0 - (0));
-                auto X1 = (x0 - (3)) * (x0 - (3));
-                auto X2 = (x0 - (-3)) * (x0 - (-3));
-                double Z1 =  w * sqrt(Y1 + X1) - vt;
-                double Z2 =  w * sqrt(Y2 + X2) - vt;
-                Z1 = m * sin(Z1);
-                Z2 = m * sin(Z2);
-                Z0 = Z1 + Z2;
+            while(y0 < rangeY) {
+                double z1 =  w * sqrt((x0 - (0)) * (x0 - (0)) + (y0 - (3)) * (y0 - (3))) - vt;
+                double z2 =  w * sqrt((x0 - (0)) * (x0 - (0)) + (y0 - (-3)) * (y0 - (-3))) - vt;
+                z1 = m * sin(z1);
+                z2 = m * sin(z2);
+                z0 = z1 + z2;
                 on(canvas);
                 y0 += dy;
             }
@@ -38,20 +36,29 @@ public:
     }
 
     void simple(QImage& canvas) {
+        if (skip) return;
         x0 = -rangeX;
         auto vt = v * t;
-        while(x0 <= rangeX) {
+        while(x0 < rangeX) {
             y0 = -rangeY;
-            while(y0 <= rangeY) {
-                auto Y = (y0 - (0)) * (y0 - (0));
-                auto X = (x0 - (0)) * (x0 - (0));
-                double z =  w * sqrt(Y + X) - vt;
-                Z0 = m * sin(z);
+            while(y0 < rangeY) {
+                double z =  w * sqrt((x0 - (0)) * (x0 - (0)) + (y0 - (0)) * (y0 - (0))) - vt;
+                z0 = m * sin(z);
                 on(canvas);
                 y0 += dy;
             }
             x0 += dx;
         }
+    }
+
+    auto getData(int i, int j, double t) {
+        double z =  w * sqrt((i - (0)) * (i - (0)) + (j - (0)) * (j - (0))) - v * t;
+        return  m * sin(z);
+    }
+
+
+    void skipFrame() {
+        skip = !skip;
     }
 
 };
